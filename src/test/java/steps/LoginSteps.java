@@ -39,4 +39,14 @@ public class LoginSteps {
 		System.out.println("User has been logged in");
 	}
 	
+	@Given("user is at the landing page")
+	public void user_is_at_the_landing_page() {
+	    System.out.println("Given statement for title verification");
+	}
+
+	@Then("Title of page should be pagetitle")
+	public void title_of_page_should_be_pagetitle() {
+	   System.out.println("Then statement for Title verification"); 
+	}
+	
 }
