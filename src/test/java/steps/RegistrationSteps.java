@@ -21,9 +21,9 @@ public void user_should_be_at_registration_page() {
 
 @When("user enters following information")
 public void user_enters_following_information(DataTable dataTable) {
-	
-	List<List<String>> data = dataTable.asLists(String.class);
-	
+		
+	List<List<String>> data = dataTable.asLists();
+		
 				for(List<String> listvalue:data)
 				{
 					System.out.println(listvalue);
@@ -32,8 +32,11 @@ public void user_enters_following_information(DataTable dataTable) {
 				List<String> l1 = data.get(0);
 				
 				String value= l1.get(2);
-				System.out.println(value );
-   
+				System.out.println(value);
+				
+				String email2= data.get(1).get(2);
+								
+				System.out.println(email2);
 }
 
 @When("Click on submit button")
