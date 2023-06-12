@@ -15,4 +15,3 @@ Examples:
 | Aron | Severs | Austin |
 | Cynthia | White | London |
 
-
