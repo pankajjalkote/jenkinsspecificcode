@@ -12,8 +12,9 @@ import io.cucumber.testng.CucumberOptions;
 		
 		plugin = {"pretty"},
 		
-		tags = "@sanity"
+//		tags = ("(@sanity or @functional) and (not @regression)")
 		
+		dryRun = false
 		
 		
 		
