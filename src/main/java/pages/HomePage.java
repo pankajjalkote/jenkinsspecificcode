@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
 	
 	WebDriver driver;
-	@FindBy(xpath = "//*[@class='a-carousel-card']//img[@alt='Summer appliances']")
+	@FindBy(xpath = "//*[@class='a-carousel-card']//img[@alt='Unrec']")
 	private WebElement summerdealcarousel;
 	
 	@FindBy(xpath = "//*[@id='nav-cart']")
