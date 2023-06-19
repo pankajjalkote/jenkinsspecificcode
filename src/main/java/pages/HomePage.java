@@ -2,6 +2,7 @@ package pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -13,10 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
 	
 	WebDriver driver;
-	@FindBy(xpath = "//*[@class='a-carousel-card']//img[@alt='Unrec']")
+	@FindBy(xpath = "//*[@class='a-carousel-card']//img[@alt='Summer appliances']")
 	private WebElement summerdealcarousel;
 	
-	@FindBy(xpath = "//*[@id='nav-cart']")
+	@FindBy(xpath = "//*[@id='nav-cart123']")
 	private WebElement carticon;
 	
 	@FindBy(xpath = "//*[@id='nav-link-accountList']")
@@ -91,7 +92,11 @@ public class HomePage {
 	{
 		
 		wait.until(ExpectedConditions.visibilityOf(summerdealcarousel));
-		summerdealcarousel.click();
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		
+		js.executeScript("arguments[0].click();", summerdealcarousel);
+	
 		
 	}
 	
