@@ -10,7 +10,9 @@ import io.cucumber.testng.CucumberOptions;
 		
 		glue = {"appfeatures"},
 		
-		plugin = {"pretty"}
+		plugin = {"pretty"},
+		
+		tags = "@regression"
 		
 		)
 

@@ -26,6 +26,14 @@ public class AppsHooks {
 		
 		String browsername = prop.getProperty("browser");
 		
+		String maven_browsername = System.getProperty("clibrowser");
+		
+		if(maven_browsername!=null)
+		{
+			browsername = maven_browsername;
+		}
+		
+		
 		df = new DriverFactory();
 
 		driver = df.initBrowser(browsername);
