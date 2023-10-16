@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 		
 		plugin = {"pretty"},
 		
-		tags = "@regression"
+		tags = "@sanity"
 		
 		)
 
