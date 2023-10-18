@@ -6,13 +6,15 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		
 		
-		features = {"src\\test\\resources\\appfeatures"},
+		features = {"src\\test\\resources\\appfeatures\\HomePage.feature"},
 		
 		glue = {"appfeatures"},
 		
-		plugin = {"pretty"},
+		plugin = {"pretty" , 
+					"html:target/cucumber-reports/amazonreports.html"
+				 },
+		tags = "@sanity or @functional"	
 		
-		tags = "@sanity"
 		
 		)
 
