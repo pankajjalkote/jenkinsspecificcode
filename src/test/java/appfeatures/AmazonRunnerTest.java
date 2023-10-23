@@ -11,7 +11,8 @@ import io.cucumber.testng.CucumberOptions;
 		glue = {"appfeatures"},
 		
 		plugin = {"pretty" , 
-					"html:target/cucumber-reports/amazonreports.html"
+					"html:target/cucumber-reports/amazonreports.html",
+					"json:target/cucumber-reports.json"
 				 },
 		tags = "@sanity or @functional"	
 		
