@@ -1,0 +1,37 @@
+pipeline {
+
+agent any 
+
+stages {
+
+stage('Building jar'){
+
+	steps{
+
+		bat "mvn clean package -DskipTests"
+	}
+
+}
+
+stage('Building image'){
+
+	steps{
+
+		bat "docker build -t=pankajjalkote/buildimagethroughjenkins ."
+	}
+
+}
+
+stage('Push image'){
+
+	steps{
+
+		bat "docker push pankajjalkote/buildimagethroughjenkins"
+	}
+
+}
+
+
+}
+
+}
