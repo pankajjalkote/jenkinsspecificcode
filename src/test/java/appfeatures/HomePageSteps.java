@@ -8,13 +8,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
 import qa.DriverFactory;
+import qa.RemoteDriverFactory;
 
 public class HomePageSteps {
 
-HomePage homepage = new HomePage(DriverFactory.getDriver());
+HomePage homepage = new HomePage(RemoteDriverFactory.getDriver());
 @Given("User is at the landing page")
 public void user_is_at_the_landing_page() {
-   WebDriver driver = DriverFactory.getDriver();
+   WebDriver driver = RemoteDriverFactory.getDriver();
 	driver.get("https://amazon.in");
 }
 

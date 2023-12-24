@@ -13,22 +13,17 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import qa.DriverFactory;
+import qa.RemoteDriverFactory;
+import utility.configreader;
 
 public class AppsHooks {
 	WebDriver driver;
 	DriverFactory df;
-
+     RemoteDriverFactory rdf;
 	@Before
 	public void launchBrowser() throws IOException {
-		Properties prop = new Properties();
-
-		String path = System.getProperty("user.dir") + "//src//test//resources//config.properties";
-
-		FileInputStream fis = new FileInputStream(path);
-
-		prop.load(fis);
-
-		String browsername = prop.getProperty("browser");
+		configreader cr = new configreader();
+		String browsername = cr.readconfig("browser");
 
 		String maven_browsername = System.getProperty("clibrowser");
 
@@ -36,9 +31,9 @@ public class AppsHooks {
 			browsername = maven_browsername;
 		}
 
-		df = new DriverFactory();
-
-		driver = df.initBrowser(browsername);
+	//	df = new DriverFactory();
+      rdf = new RemoteDriverFactory();
+		driver = rdf.initBrowser(browsername);
 
 		driver.manage().window().maximize();
 

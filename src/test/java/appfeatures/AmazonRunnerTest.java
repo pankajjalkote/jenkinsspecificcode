@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		
 		
-		features = {"src\\test\\resources\\appfeatures\\HomePage.feature"},
+		features = {"classpath:appfeatures"},
 		
 		glue = {"appfeatures"},
 		
